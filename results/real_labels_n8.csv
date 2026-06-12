@@ -1,0 +1,16 @@
+name,experiment,n,N,seed,ratio,train_error,test_error,gen_gap,train_accuracy,memorized,generations,restarts,seconds
+real_labels_n8,real_labels,8,5,2,,0.0,0.375,0.375,1.0,True,60,0,15.3
+real_labels_n8,real_labels,8,5,1,,0.0,0.35,0.35,1.0,True,80,0,20.9
+real_labels_n8,real_labels,8,5,0,,0.0,0.419,0.419,1.0,True,240,0,38.9
+real_labels_n8,real_labels,8,8,1,,0.0,0.241,0.241,1.0,True,260,0,86.7
+real_labels_n8,real_labels,8,10,0,,0.0,0.323,0.323,1.0,True,400,0,188.5
+real_labels_n8,real_labels,8,8,0,,0.0,0.293,0.293,1.0,True,660,0,254.0
+real_labels_n8,real_labels,8,10,2,,0.0,0.282,0.282,1.0,True,780,0,398.9
+real_labels_n8,real_labels,8,10,1,,0.1,0.287,0.187,0.9,False,1185,0,600.3
+real_labels_n8,real_labels,8,8,2,,0.375,0.508,0.133,0.625,False,1467,0,600.2
+real_labels_n8,real_labels,8,14,0,,0.14286,0.253,0.11014,0.85714,False,823,0,600.7
+real_labels_n8,real_labels,8,14,1,,0.07143,0.233,0.16157,0.92857,False,822,0,600.5
+real_labels_n8,real_labels,8,14,2,,0.28571,0.483,0.19729,0.71429,False,838,0,600.7
+real_labels_n8,real_labels,8,20,0,,0.35,0.39,0.04,0.65,False,607,0,600.3
+real_labels_n8,real_labels,8,20,1,,0.35,0.456,0.106,0.65,False,624,0,600.4
+real_labels_n8,real_labels,8,20,2,,0.3,0.322,0.022,0.7,False,651,0,600.8

@@ -1,0 +1,14 @@
+# Keep the build context (and image) small and the build fast.
+.git
+data/                 # 98 MB authors' data + cache (fetched at runtime, bind-mounted)
+results/
+logs/
+figures/
+**/__pycache__/
+*.pyc
+*.pkl
+*.ckpt
+.venv/
+.pytest_cache/
+.idea/
+.vscode/

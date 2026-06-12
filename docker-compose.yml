@@ -1,0 +1,32 @@
+# Usage:
+#   docker compose build
+#   docker compose run --rm experiment --config configs/random_labels_n8.yaml
+#   docker compose run --rm runner   scripts/dispatch_sweep.py --sweep configs/sweep_fig3.yaml
+#
+# data/, results/, figures/, logs/ are bind-mounted so artifacts persist on the host
+# and survive container restarts (important for checkpoint/resume on 12h sessions).
+
+services:
+  experiment:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: qml-gen-repro:latest
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./figures:/app/figures
+      - ./logs:/app/logs
+    environment:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+    # ENTRYPOINT is run_experiment.py; append `--config ...` to `docker compose run`.
+
+  # Parallel sweep dispatcher: overrides the entrypoint to run the job-runner,
+  # which itself spawns per-(n,N,seed) workers across cores.
+  runner:
+    extends: experiment
+    entrypoint: ["python"]
+    # e.g. docker compose run --rm runner scripts/dispatch_sweep.py --sweep configs/sweep_fig3.yaml --workers 10

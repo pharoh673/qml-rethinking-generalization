@@ -1,0 +1,23 @@
+# Fig. 3a baseline — TRUE labels, n=8. The contrast curve: structured labels memorize fast
+# AND generalize, so the generalization gap stays SMALL (vs ~0.75 for random labels).
+experiment: real_labels
+n: 8
+N_values: [5, 8, 10, 14, 20]
+seeds: [0, 1, 2]
+periodic: false
+test_size: 1000
+
+sigma0: 0.7
+tolfun: 0.0005
+max_generations: 1500
+max_restarts: 20
+target_accuracy: 1.0
+equalize_loss: true
+popsize: null
+popsize_growth: 2.0
+time_budget: 600        # per-job wall-clock cap (s)
+
+name: real_labels_n8
+results_dir: results
+checkpoint_dir: results/checkpoints
+log_dir: logs

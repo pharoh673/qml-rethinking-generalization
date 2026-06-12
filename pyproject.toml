@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qml-generalization-replication"
+version = "0.1.0"
+description = "Replication of Gil-Fuster, Eisert & Bravo-Prieto, 'Understanding quantum machine learning also requires rethinking generalization' (Nat. Commun. 2024, arXiv:2306.13461)"
+requires-python = ">=3.11"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

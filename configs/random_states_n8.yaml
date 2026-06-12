@@ -1,0 +1,19 @@
+# Fig. 3c — random states, n=8. Amplitudes resampled from N(mu_psi, sigma_psi), labels kept.
+# (n=10,12 need the non-power-of-two QCNN layout; added in a later phase.)
+experiment: random_states
+n: 8
+N_values: [5, 8, 10, 14, 20]
+seeds: [0, 1, 2, 3, 4]
+periodic: false
+test_size: 1000
+
+sigma0: 0.7
+tolfun: 0.0001          # authors used 1e-4 for the random-states experiment
+max_generations: 1500
+max_restarts: 30
+target_accuracy: 1.0
+
+name: random_states_n8
+results_dir: results
+checkpoint_dir: results/checkpoints
+log_dir: logs

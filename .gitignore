@@ -1,0 +1,32 @@
+# --- regenerable data & heavy artifacts (gitignored) ---
+data/
+!data/.gitkeep
+
+# raw per-run outputs and checkpoints (summaries under results/ ARE committed)
+results/raw/
+logs/
+*.ckpt
+*.pkl
+
+# generated figures (committed copies live under figures/, large/raw ignored)
+figures/raw/
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# --- notebooks ---
+.ipynb_checkpoints/
+
+# --- os / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

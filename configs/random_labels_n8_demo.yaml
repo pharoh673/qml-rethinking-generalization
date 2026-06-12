@@ -1,0 +1,26 @@
+# Fig. 3a demo (bounded for a ~2h CPU budget) — RANDOM labels, n=8.
+# The QCNN memorizes random labels (train_err -> 0) while test error stays ~0.75, so the
+# generalization gap sits near the maximal 0.75 line — the paper's headline. Limited to
+# N in {5,8} and 3 seeds so each job fits the wall-clock cap. (The full grid N in
+# {5,8,10,14,20} x 5 seeds is in configs/random_labels_n8.yaml; it needs more compute.)
+experiment: random_labels
+n: 8
+N_values: [5, 8]
+seeds: [0, 1, 2]
+periodic: false
+test_size: 1000
+
+sigma0: 0.7
+tolfun: 0.0005
+max_generations: 1500
+max_restarts: 30
+target_accuracy: 1.0
+equalize_loss: true
+popsize: 20             # larger base population helps memorize random labels
+popsize_growth: 2.0     # IPOP: grow population each restart
+time_budget: 540        # per-job wall-clock cap (s), fits one run window
+
+name: random_labels_n8_demo
+results_dir: results
+checkpoint_dir: results/checkpoints
+log_dir: logs

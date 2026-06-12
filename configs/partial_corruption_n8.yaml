@@ -1,0 +1,21 @@
+# Fig. 3b — partial label corruption, n=8. Test error vs corruption ratio r.
+# Per the paper the natural grid is r = c/N for c in 0..N; the list below covers the
+# shared points; finer per-N grids can be expanded by scripts/dispatch_sweep.py.
+experiment: partial_corruption
+n: 8
+N_values: [4, 6, 8]
+seeds: [0, 1, 2, 3, 4]
+corruption_ratios: [0.0, 0.3333, 0.6667, 1.0]
+periodic: false
+test_size: 1000
+
+sigma0: 0.7
+tolfun: 0.0005
+max_generations: 1500
+max_restarts: 30
+target_accuracy: 1.0
+
+name: partial_corruption_n8
+results_dir: results
+checkpoint_dir: results/checkpoints
+log_dir: logs

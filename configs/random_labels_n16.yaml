@@ -1,0 +1,18 @@
+# Fig. 3a — random labels, n=16 (dense ED, 65536-dim; no DMRG needed).
+experiment: random_labels
+n: 16
+N_values: [5, 8, 10, 14, 20]
+seeds: [0, 1, 2, 3, 4]
+periodic: false
+test_size: 1000
+
+sigma0: 0.7
+tolfun: 0.0005
+max_generations: 1500
+max_restarts: 30
+target_accuracy: 1.0
+
+name: random_labels_n16
+results_dir: results
+checkpoint_dir: results/checkpoints
+log_dir: logs
